@@ -40,6 +40,8 @@ function changeVal(filter) {
     if (edit != undefined || edit != "") {
         localStorage.setItem(edit, document.getElementById("range").value)
     }
+    document.getElementById("img").style.filter = `brightness(${localStorage.getItem("brightness")}%) contrast(${localStorage.getItem("contrast")}%) invert(${localStorage.getItem("inversion")}%) grayscale(${localStorage.getItem("grayscale")}%)`
     document.getElementById("perc").innerText = document.getElementById("range").value + "%"
 }
+
 filter('brightness')
