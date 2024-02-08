@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+body{
+    background-color: #e3f2fd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+.container{
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+    display: flex; 
+    flex-direction: column;
+    gap: 10px;
+    width: 750px;
+}
+.container h1{
+    font-size: 22px;
+    font-weight: 500;
+}
+.container .inner-container{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 100%;
+    gap: 15px;
+}
+.container .inner-container img{
+    width: 450px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.container .inner-container .edits{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 15px;
+}
+.container .inner-container .edits h1{
+    font-size: 18px;
+    margin-bottom: 7px;
+    font-weight: 400;
+}
+.container .inner-container .edits .effects{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 7px;
+    width: 100%;
+}
+.container .inner-container .edits .effects .row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 7px;
+    width: 100%;
+}
+.container .inner-container .edits .effects .row button{
+    width: 50%;
+    padding: 7px;
+    font-size: 16px;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.container .inner-container .edits .effects .row button:hover{
+    background-color: #f5f5f5;
+}
+.container .inner-container .edits .effects .row button.active{
+    background-color: #5071e6;
+    border: 1px solid #5071e6;
+    color: white;
+}
+.container .inner-container .edits .range{
+    margin: 15px 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+}
+.container .inner-container .edits .range .details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.container .inner-container .edits .range .details p{
+    font-size: 14px;
+}
+.container .inner-container .edits .rotate{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.container .inner-container .edits .rotate button{
+    padding: 10px;
+    font-size: 16px;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 25%;
+    color: #848e90;
+}
+.container .inner-container .edits .rotate button:hover{
+    background-color: #f5f5f5;
+}
+.container .bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.container .bottom button{
+    padding: 10px 7px;
+    background-color: transparent;
+    border: 1px solid #a4a4a4;
+    border-radius: 5px;
+    color: #a4a4a4;
+    text-transform: uppercase;
+    width: 140px;
+    transition: .4s ease-in-out;
+}
+.container .bottom button:hover{
+    background-color: #586167;
+    color: white;
+    border: 1px solid #586167;
+}
+.container .bottom .right-button{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.container .bottom .right-button button:nth-child(1){
+    background-color: #586167;
+    color: white;
+    border: 1px solid #586167;
+}
+.container .bottom .right-button button:nth-child(2){
+    background-color: #4460c2;
+    color: white;
+    border: 1px solid #4460c2;
+}
