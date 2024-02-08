@@ -11,7 +11,11 @@ localStorage.setItem("contrast", contrast)
 localStorage.setItem("inversion", inversion)
 localStorage.setItem("grayscale", grayscale)
 function reset() {
-    location.reload()
+    localStorage.setItem("brightness", 100)
+    localStorage.setItem("contrast", 100)
+    localStorage.setItem("inversion", 0)
+    localStorage.setItem("grayscale", 0)
+    filter('brightness')
 }
 function filter(name) {
     if (name == 'brightness') {
@@ -78,6 +82,7 @@ function rotate(rotation) {
     currentRotation += rotation;
     document.getElementById("img").style.transform = `rotate(${currentRotation}deg)`;
 }
+
 
 
 filter('brightness') 
