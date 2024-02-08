@@ -2,7 +2,9 @@ var brightness = 100
 var contrast = 100
 var inversion = 0
 var grayscale = 0
-var edit
+var edit;
+var isFlipped = false
+let currentRotation = 0;
 localStorage.setItem("brightness", brightness)
 localStorage.setItem("contrast", contrast)
 localStorage.setItem("inversion", inversion)
@@ -17,11 +19,11 @@ function filter(name) {
         document.getElementById("range").value = localStorage.getItem("brightness")
         changeVal(name)
     }
-    else if (name == "contrast") { 
+    else if (name == "contrast") {
         document.getElementById("range").setAttribute("min", 0)
         document.getElementById("range").setAttribute("max", 200)
         document.getElementById("range").value = localStorage.getItem("contrast")
-        changeVal(name)    
+        changeVal(name)
     }
     else if (name == 'inversion') {
         document.getElementById("range").setAttribute("min", 0)
@@ -43,22 +45,37 @@ function changeVal(filter) {
     document.getElementById("img").style.filter = `brightness(${localStorage.getItem("brightness")}%) contrast(${localStorage.getItem("contrast")}%) invert(${localStorage.getItem("inversion")}%) grayscale(${localStorage.getItem("grayscale")}%)`
     document.getElementById("perc").innerText = document.getElementById("range").value + "%"
 }
-function newImg(){
+function newImg() {
     var input = document.getElementById("image");
     var img = document.getElementById("img");
     var file = input.files[0];
     var reader = new FileReader();
-    
-    reader.onload = function(e) {
+
+    reader.onload = function (e) {
         img.src = e.target.result;
     };
     reader.readAsDataURL(file);
-    
+
     localStorage.setItem("brightness", 100)
     localStorage.setItem("contrast", 100)
     localStorage.setItem("inversion", 0)
     localStorage.setItem("grayscale", 0)
-    filter('brightness') 
+    filter('brightness')
 }
-    
-    filter('brightness') 
+
+function flipX(){
+    if(!isFlipped){
+        document.getElementById('img').style.transform = 'scaleX(-1)'
+        isFlipped = true
+    }else{
+        document.getElementById('img').style.transform = 'scaleX(1)'
+        isFlipped = false
+    }
+}
+function rotate(rotation) {
+    currentRotation += rotation;
+    document.getElementById("img").style.transform = `rotate(${currentRotation}deg)`;
+}
+
+
+filter('brightness') 

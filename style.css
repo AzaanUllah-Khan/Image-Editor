@@ -153,6 +153,12 @@ body{
     color: white;
     border: 1px solid #4460c2;
 }
+button:disabled{
+    opacity: .75;
+}
+button:disabled:hover{
+    background-color: transparent !important;
+}
 @media screen and (max-width: 770px) {
     .container{
         width: 670px;
