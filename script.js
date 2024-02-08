@@ -5,6 +5,7 @@ var grayscale = 0
 var edit;
 var isFlipped = false
 let currentRotation = 0;
+var arr = ["b"]
 localStorage.setItem("brightness", brightness)
 localStorage.setItem("contrast", contrast)
 localStorage.setItem("inversion", inversion)
@@ -36,6 +37,7 @@ function filter(name) {
         document.getElementById("range").value = localStorage.getItem("grayscale")
         changeVal(name)
     }
+    document.getElementById("effect").innerText = name.charAt(0).toUpperCase() + name.slice(1)
 }
 function changeVal(filter) {
     edit = filter || edit
