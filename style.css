@@ -12,7 +12,7 @@ body{
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    overflow: hidden;
+    padding: 10px;
 }
 .container{
     padding: 20px;
@@ -150,4 +150,49 @@ body{
     background-color: #4460c2;
     color: white;
     border: 1px solid #4460c2;
+}
+@media screen and (max-width: 770px) {
+    .container{
+        width: 670px;
+    }
+    .container .inner-container .edits{
+        width: 250px;
+    }
+    .container .inner-container img{
+        width: 420px;
+    }
+}
+@media screen and (max-width: 700px) {
+    .container{
+        width: 100%;
+    }
+    .container .inner-container{
+        flex-direction: column;
+    }
+    .container .inner-container .edits{
+        width: 100%;
+        height: auto;
+    }
+    .container .inner-container img{
+        width: 100%;
+        height: 200px;
+    }
+    .container .bottom button{
+        width: 33%;
+        padding: 6px;
+        font-size: 11px;
+    }
+    .container .bottom .right-button{
+        width: 66%;
+    }
+    .container .bottom .right-button button{
+        width: 50%;
+    }
+    .container .inner-container .edits .rotate button{
+        padding: 5px;
+    }
+    .container .inner-container .edits .effects .row button{
+        padding: 5px;
+        font-size: 14px;
+    }
 }
