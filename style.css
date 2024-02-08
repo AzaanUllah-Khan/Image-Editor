@@ -22,6 +22,7 @@ body{
     flex-direction: column;
     gap: 10px;
     width: 750px;
+    box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, 0.19);
 }
 .container h1{
     font-size: 22px;
@@ -39,6 +40,7 @@ body{
     height: 300px;
     object-fit: cover;
     border-radius: 10px;
+    filter: brightness(100%) contrast(100%) invert(0%) grayscale(0%);
 }
 .container .inner-container .edits{
     width: 300px;
