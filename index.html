@@ -16,17 +16,17 @@
     <div class="container">
         <h1>Easy Image Editor</h1>
         <div class="inner-container">
-            <img src="https://avatars.githubusercontent.com/u/121516991?v=4">
+            <img src="https://avatars.githubusercontent.com/u/121516991?v=4" id="img">
             <div class="edits">
                 <h1>Filters</h1>
                 <div class="effects">
                     <div class="row">
-                        <button class="active">Brightness</button>
-                        <button>Saturation</button>
+                        <button onclick="filter('brightness')">Brightness</button>
+                        <button onclick="filter('contrast')">Contrast</button>
                     </div>
                     <div class="row">
-                        <button>Inversion</button>
-                        <button>Grayscale</button>
+                        <button onclick="filter('inversion')">Inversion</button>
+                        <button onclick="filter('grayscale')">Grayscale</button>
                     </div>
                 </div>
                 <div class="range">
@@ -34,7 +34,7 @@
                         <p id="effect">Brightness</p>
                         <p id="perc">20%</p>
                     </div>
-                    <input type="range">
+                    <input type="range" id="range" oninput="changeVal()">
                 </div>
                 <h1>Rotate & Flip</h1>
                 <div class="rotate">
@@ -46,13 +46,15 @@
             </div>
         </div>
         <div class="bottom">
-            <button>Reset Filter</button>
-            <div class="right-button">    
-                <button>Choose Image</button>
+            <button onclick="reset()">Reset Filter</button>
+            <div class="right-button">
+                <button><label for="image">Change Image</label></button>
                 <button>Save Image</button>
+                <input type="file" id="image" hidden onchange="newImg()">
             </div>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 
 </html>

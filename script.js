@@ -43,5 +43,22 @@ function changeVal(filter) {
     document.getElementById("img").style.filter = `brightness(${localStorage.getItem("brightness")}%) contrast(${localStorage.getItem("contrast")}%) invert(${localStorage.getItem("inversion")}%) grayscale(${localStorage.getItem("grayscale")}%)`
     document.getElementById("perc").innerText = document.getElementById("range").value + "%"
 }
-
-filter('brightness')
+function newImg(){
+    var input = document.getElementById("image");
+    var img = document.getElementById("img");
+    var file = input.files[0];
+    var reader = new FileReader();
+    
+    reader.onload = function(e) {
+        img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+    
+    localStorage.setItem("brightness", 100)
+    localStorage.setItem("contrast", 100)
+    localStorage.setItem("inversion", 0)
+    localStorage.setItem("grayscale", 0)
+    filter('brightness') 
+}
+    
+    filter('brightness') 
