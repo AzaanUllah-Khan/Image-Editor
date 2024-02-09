@@ -18,6 +18,17 @@ function reset() {
     filter('brightness')
 }
 function filter(name) {
+    const buttons = document.querySelectorAll('button');
+    
+    buttons.forEach(button => {
+      button.addEventListener('click', function() {
+        const currentActive = document.querySelector('.active');
+        if (currentActive) {
+          currentActive.classList.remove('active');
+        }
+        this.classList.add('active');
+      });
+    });
     if (name == 'brightness') {
         document.getElementById("range").setAttribute("min", 0)
         document.getElementById("range").setAttribute("max", 200)
